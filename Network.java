@@ -106,6 +106,8 @@ public class Network {
                 mostRecommendedUser = users[i];
             }
         }
+        if (mostRecommendedUser == null)
+            return "null";
         return mostRecommendedUser.getName();
     }
 
@@ -124,6 +126,8 @@ public class Network {
                 maxFollowers = followers;
             }
         }
+        if (mostPopularUser == null)
+            return "null";
         return mostPopularUser.getName();
     }
 
@@ -144,9 +148,9 @@ public class Network {
     // Returns a textual description of all the users in this network, and who they
     // follow.
     public String toString() {
-        String text = "";
+        String text = "Network:";
         for (int i = 0; i < userCount; i++)
-            text += (users[i]) + "\n";
+            text += "\n" + (users[i]);
         return text;
     }
 }

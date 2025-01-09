@@ -51,7 +51,7 @@ public class User {
      */
     public boolean follows(String name) {
         for (int i = 0; i < fCount; i++)
-            if (this.follows[i].equals(name))
+            if (this.follows[i].toLowerCase().equals(name.toLowerCase()))
                 return true;
         return false;
     }
@@ -62,7 +62,7 @@ public class User {
      * does nothing and returns false;
      */
     public boolean addFollowee(String name) {
-        if (fCount == maxfCount || follows(name))
+        if (fCount == maxfCount || follows(name) || this.name == name)
             return false;
         follows[fCount] = name;
         fCount++;
